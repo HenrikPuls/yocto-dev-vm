@@ -1,0 +1,13 @@
+---
+# install misc tools
+- name: Install misc tools
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - curl
+    - terminator
+    - mc
+    - keepassx
+    - bless
+  

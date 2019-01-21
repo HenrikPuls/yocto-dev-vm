@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Finalize installation
+Comment=Performs the parts of the installation which require user interaction
+Exec=terminator -e /home/devel/tools/finalize-installation.sh
+Icon=utilities-terminal
+Type=Application

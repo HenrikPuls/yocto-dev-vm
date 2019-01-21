@@ -1,0 +1,9 @@
+---
+# defaults file for provision/roles/developer
+#user name
+user_name: "devel"
+#password (devel)
+user_password: "$6$YzEilaqAJzZuJJ4t$GfqwYZOQtMqx7tu.t5/i4JT0paYBnLjR67fsCmOpfdY9xxh/npAJnHwi1X6JUjiWOBSW/dp6D.OqGClRpNj471" # (devel) create with mkpasswd --method=sha-512
+# Visual Studio Code version number (defaults to the latest version)
+visual_studio_code_version: ""
+NODEJS_VERSION: "10"

@@ -1,0 +1,48 @@
+---
+# Create user account devel with password devel
+- user:
+    name: "{{ user_name }}"
+    password: "{{ user_password }}"
+    groups: sudo           # Empty by default.
+    state: present
+    shell: /bin/bash       # Defaults to /bin/bash
+
+# Create tools folder
+- file:
+    path: "/home/{{ user_name }}/tools"
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: 0744
+
+# Add script to finalize installation
+- copy:
+    src: finalize-installation.sh
+    dest: "/home/{{ user_name }}/tools/finalize-installation.sh"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: 0744
+
+# Create Desktop folder as it is not yet created
+- file:
+    path: "/home/{{ user_name }}/Desktop"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    state: directory
+    mode: 0744
+
+# Add desktop icon
+- copy:
+    src: finalize-installation.desktop
+    dest: "/home/{{ user_name }}/Desktop/finalize-installation.desktop"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: 0744
+
+# Create project folder
+- file:
+    path: "/home/{{ user_name }}/projects"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    state: directory
+    mode: 0744

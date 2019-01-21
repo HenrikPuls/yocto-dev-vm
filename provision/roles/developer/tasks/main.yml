@@ -1,0 +1,8 @@
+---
+# tasks file for provision/roles/developer
+
+- import_tasks: devtools.yml
+- import_tasks: yocto.yml
+- import_tasks: vscode.yml
+- import_tasks: misc.yml
+- import_tasks: user.yml
