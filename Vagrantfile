@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "lariscus/ubuntu-18.04-desktop-de"
+  config.vm.box = "lariscus/ubuntu-16.04-desktop-de"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -56,8 +56,7 @@ Vagrant.configure("2") do |config|
      # Customize the amount of memory on the VM:
      vb.memory = "8192"
      vb.cpus = 4
-     vb.name ="dev_vm"
-     vb.customize ["modifyvm", :id, "--accelerate3d", "On"]
+     #vb.customize ["modifyvm", :id, "--accelerate3d", "On"]
      vb.customize ["modifyvm", :id, "--vram", "128"]
    end
 
